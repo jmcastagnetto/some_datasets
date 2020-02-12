@@ -41,3 +41,6 @@ Las estadísticas de la duración (en semanas) en el cargo son:
 |--:|--------:|--------:|-------:|------:|------:|
 | 82|    37.67|    26.46|   33.57|   1.43| 163.43|
 
+Gráfico de la duración en el cargo (en semanas) por cartera:
+
+![Duración en el cargo por cartera](duracion-en-semanas.png)
