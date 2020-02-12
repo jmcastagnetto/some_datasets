@@ -47,13 +47,18 @@ ggplot(df, aes(color = ministerio)) +
   theme_minimal(12) +
   facet_wrap(~ministerio, scales = "free", ncol = 2) +
   labs(
-    title = "Duración de periodos ministeriales (en semanas)",
+    title = "Duración de periodos ministeriales en el gobierno actual (en semanas, Perú)",
+    subtitle = "Fuentes: https://es.wikipedia.org/wiki/Gobierno_de_Pedro_Pablo_Kuczynski#Ministros\nhttps://es.wikipedia.org/wiki/Gobierno_de_Mart%C3%ADn_Vizcarra#Ministros_de_Estado",
+    caption = "No incluye titulares en ejercicio en la actualidad\nActualizado el 2020-02-12T11:20 // @jmcastagnetto, Jesús M. Castagnetto",
     y = "",
     x = ""
+  ) +
+  theme(
+    plot.margin = unit(rep(1, 4), "cm")
   )
 
 ggsave(
   filename = "gabinetes-ppk-mvc/duracion-en-semanas.png",
-  width = 10,
-  height = 16
+  width = 12,
+  height = 18
 )
