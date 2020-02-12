@@ -37,9 +37,7 @@ Estructura (csv)
 
 Las estadísticas de la duración en el cargo son:
 
-Table: Duración en semanas de un titular ministerial (PPK + MVC)
-
-  n   promedio   desv_std   mediana   mínimo   máximo
----  ---------  ---------  --------  -------  -------
- 82      37.67      26.46     33.57     1.43   163.43
+|  n| promedio| desv_std| mediana| mínimo| máximo|
+|--:|--------:|--------:|-------:|------:|------:|
+| 82|    37.67|    26.46|   33.57|   1.43| 163.43|
 
