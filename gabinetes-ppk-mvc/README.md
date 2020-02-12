@@ -35,7 +35,7 @@ Estructura (csv)
 
 **Nota**: Los archivos originales fueron procesados usando el script `gabinetes-ppk-mvc.R`
 
-Las estadísticas de la duración en el cargo son:
+Las estadísticas de la duración (en semanas) en el cargo son:
 
 |  n| promedio| desv_std| mediana| mínimo| máximo|
 |--:|--------:|--------:|-------:|------:|------:|
