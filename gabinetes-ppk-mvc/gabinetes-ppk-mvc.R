@@ -7,7 +7,7 @@ fix_content <- function(x) {
     str_replace("septiembre", "setiembre")
 }
 
-ppk <- read_csv("ppk-raw.csv") %>%
+ppk <- read_csv("gabinetes-ppk-mvc/ppk-raw.csv") %>%
   janitor::clean_names() %>%
   separate_rows(
     titular, periodo,
@@ -29,7 +29,7 @@ ppk <- read_csv("ppk-raw.csv") %>%
                                locale = "es_PE.utf8")
   )
 
-mvc <- read_csv("mvc-raw.csv") %>%
+mvc <- read_csv("gabinetes-ppk-mvc/mvc-raw.csv") %>%
   janitor::clean_names() %>%
   separate_rows(
     titular, periodo,
@@ -53,6 +53,6 @@ mvc <- read_csv("mvc-raw.csv") %>%
 
 gabinetes_ppk_mvc <- bind_rows(ppk, mvc)
 
-write_csv(ppk, path = "gabinetes-ppk.csv")
-write_csv(mvc, path = "gabinetes-mvc.csv")
-write_csv(gabinetes_ppk_mvc, path = "gabinetes-ppk-mvc.csv")
+write_csv(ppk, path = "gabinetes-ppk-mvc/gabinetes-ppk.csv")
+write_csv(mvc, path = "gabinetes-ppk-mvc/gabinetes-mvc.csv")
+write_csv(gabinetes_ppk_mvc, path = "gabinetes-ppk-mvc/gabinetes-ppk-mvc.csv")
