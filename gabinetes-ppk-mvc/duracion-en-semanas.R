@@ -1,17 +1,24 @@
 library(tidyverse)
 library(lubridate)
 
-sumario <- read_csv("gabinetes-ppk-mvc/gabinetes-ppk-mvc.csv") %>%
+gabinetes <- read_csv("gabinetes-ppk-mvc/gabinetes-ppk-mvc.csv") %>%
   mutate(
     semanas = as.duration(inicio %--% fin) / dweeks(1)
-  ) %>%
+  )
+sumario <- gabinetes %>%
+  filter(!is.na(semanas)) %>%  # filtrar quienes están aún en el cargo
+  group_by(ministerio, titular) %>%
   summarise(
-    n = sum(!is.na(semanas)),
-    promedio = mean(semanas, na.rm = T),
-    desv_std = sd(semanas, na.rm = T),
-    mediana = median(semanas, na.rm = T),
-    mínimo = min(semanas, na.rm = T),
-    máximo = max(semanas, na.rm = T)
+    semanas_tot = sum(semanas)
+  ) %>%
+  ungroup() %>%
+  summarise(
+    n = n(),
+    promedio = mean(semanas_tot, na.rm = T),
+    desv_std = sd(semanas_tot, na.rm = T),
+    mediana = median(semanas_tot, na.rm = T),
+    mínimo = min(semanas_tot, na.rm = T),
+    máximo = max(semanas_tot, na.rm = T)
   )
 
 knitr::kable(
@@ -21,8 +28,13 @@ knitr::kable(
   caption = "Duración en semanas de un titular ministerial (PPK + MVC)"
   )
 
-df <- gabs %>%
-  mutate(semanas = as.duration(inicio %--% fin) / dweeks(1)) %>%
+# Table: Duración en semanas de un titular ministerial (PPK + MVC)
+#
+#   n   promedio   desv_std   mediana   mínimo   máximo
+# ---  ---------  ---------  --------  -------  -------
+#  82      37.67      26.46     33.57     1.43   163.43
+
+df <- gabinetes %>%
   filter(!is.na(semanas)) %>%
   group_by(ministerio, titular) %>%
   summarise(

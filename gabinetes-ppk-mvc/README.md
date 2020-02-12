@@ -34,3 +34,12 @@ Estructura (csv)
   - fin: fecha de inicio (formato ISO: YYYY-MM-DD)
 
 **Nota**: Los archivos originales fueron procesados usando el script `gabinetes-ppk-mvc.R`
+
+Las estadísticas de la duración en el cargo son:
+
+Table: Duración en semanas de un titular ministerial (PPK + MVC)
+
+  n   promedio   desv_std   mediana   mínimo   máximo
+---  ---------  ---------  --------  -------  -------
+ 82      37.67      26.46     33.57     1.43   163.43
+
