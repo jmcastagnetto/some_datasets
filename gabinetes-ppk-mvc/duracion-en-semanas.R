@@ -30,9 +30,9 @@ knitr::kable(
 
 # Table: Duración en semanas de un titular ministerial (PPK + MVC)
 #
-#   n   promedio   desv_std   mediana   mínimo   máximo
-# ---  ---------  ---------  --------  -------  -------
-#  82      37.67      26.46     33.57     1.43   163.43
+#    n   promedio   desv_std   mediana   mínimo   máximo
+#  ---  ---------  ---------  --------  -------  -------
+#   84      37.81      26.47     33.57     1.43   163.43
 
 df <- gabinetes %>%
   filter(!is.na(semanas)) %>%
