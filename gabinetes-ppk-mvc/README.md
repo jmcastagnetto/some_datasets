@@ -39,7 +39,7 @@ Las estadísticas de la duración (en semanas) en el cargo son:
 
 |  n| promedio| desv_std| mediana| mínimo| máximo|
 |--:|--------:|--------:|-------:|------:|------:|
-| 82|    37.67|    26.46|   33.57|   1.43| 163.43|
+| 84|    37.81|    26.47|   33.57|   1.43| 163.43|
 
 Gráfico de la duración en el cargo (en semanas) por cartera:
 
